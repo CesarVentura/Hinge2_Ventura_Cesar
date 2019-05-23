@@ -1,0 +1,41 @@
+#VRML_SIM R2019a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.09739251572130676 -0.9890326091620212 0.11103691231135539 0.05624848782683367
+  position -0.0031826240968762867 0.11184541926298408 0.3279538648972911
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Cylinder {
+        height 0.2
+        radius 0.1
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+      }
+      endPoint Solid {
+        translation 0.25 0.107 0
+        children [
+          Shape {
+            appearance PBRAppearance {
+            }
+            geometry Box {
+              size 0.5 0.01 0.1
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
