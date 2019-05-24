@@ -3,7 +3,7 @@ WorldInfo {
 }
 Viewpoint {
   orientation -0.9754643518180685 0.21240599517002962 0.057905021785547975 0.4037307621805622
-  position 0.3942672982261499 1.9972793655262389 1.6096681550578125
+  position 0.40030117649216773 2.0266601418424703 1.6800127759750134
 }
 TexturedBackground {
 }
@@ -43,9 +43,13 @@ Solid {
             jointParameters HingeJointParameters {
               axis 0 0 1
               anchor 0.25 0 0
+              minStop -1
+              maxStop 1
+              springConstant 0.1
             }
             endPoint Solid {
               translation 0.3 0 0
+              rotation 0 0 1 0
               children [
                 DEF G_BOX2 Shape {
                   appearance PBRAppearance {
@@ -53,6 +57,26 @@ Solid {
                   }
                   geometry Box {
                     size 0.1 0.01 0.1
+                  }
+                }
+                HingeJoint {
+                  jointParameters HingeJointParameters {
+                    anchor 0.05 0 0
+                  }
+                  endPoint Solid {
+                    translation 0.125 0 0
+                    children [
+                      DEF G_BOX_3 Shape {
+                        appearance PBRAppearance {
+                        }
+                        geometry Box {
+                          size 0.15 0.01 0.1
+                        }
+                      }
+                    ]
+                    boundingObject USE G_BOX_3
+                    physics Physics {
+                    }
                   }
                 }
               ]
