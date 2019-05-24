@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.9754643518180685 0.21240599517002962 0.057905021785547975 0.4037307621805622
-  position 0.40030117649216773 2.0266601418424703 1.6800127759750134
+  orientation -0.9785097455039771 0.19900502338200413 0.05399702420013586 0.3821328437151647
+  position 0.270403885255689 1.499582413681698 1.9135475870535021
 }
 TexturedBackground {
 }
@@ -14,7 +14,7 @@ Floor {
 Solid {
   translation 0 0.5 0
   children [
-    Shape {
+    DEF G_CYLINDER_BASE Shape {
       appearance PBRAppearance {
         baseColor 0 0 0
       }
@@ -65,9 +65,11 @@ Solid {
                   }
                   endPoint Solid {
                     translation 0.125 0 0
+                    rotation 1 0 0 0
                     children [
                       DEF G_BOX_3 Shape {
                         appearance PBRAppearance {
+                          baseColor 0.12549019607843137 0.2901960784313726 0.5294117647058824
                         }
                         geometry Box {
                           size 0.15 0.01 0.1
