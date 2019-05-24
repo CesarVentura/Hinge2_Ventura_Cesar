@@ -2,8 +2,8 @@
 WorldInfo {
 }
 Viewpoint {
-  orientation -0.6293029888400399 -0.753598462572656 -0.18991341565334885 0.7926821409111293
-  position -0.7681018204673811 1.6386141992712353 1.1418598196726406
+  orientation -0.9754643518180685 0.21240599517002962 0.057905021785547975 0.4037307621805622
+  position 0.3942672982261499 1.9972793655262389 1.6096681550578125
 }
 TexturedBackground {
 }
@@ -26,12 +26,12 @@ Solid {
     HingeJoint {
       jointParameters HingeJointParameters {
         axis 0 1 0
-        anchor 0 0.5 0
+        anchor 0 0.15 0
       }
       endPoint Solid {
-        translation 0.25 0.51 0
+        translation 0.25 0.5099999999999999 -0.009999999999999997
         children [
-          Shape {
+          DEF G_table_2 Shape {
             appearance PBRAppearance {
               baseColor 0.8 0 0
             }
@@ -39,7 +39,32 @@ Solid {
               size 0.5 0.01 0.1
             }
           }
+          HingeJoint {
+            jointParameters HingeJointParameters {
+              axis 0 0 1
+              anchor 0.25 0 0
+            }
+            endPoint Solid {
+              translation 0.3 0 0
+              children [
+                DEF G_BOX2 Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.3058823529411765 0.6039215686274509 0.023529411764705882
+                  }
+                  geometry Box {
+                    size 0.1 0.01 0.1
+                  }
+                }
+              ]
+              boundingObject USE G_BOX2
+              physics Physics {
+              }
+            }
+          }
         ]
+        boundingObject USE G_table_2
+        physics Physics {
+        }
       }
     }
   ]
